@@ -11,10 +11,6 @@ stages {
         }
     	stage('Run AWS CLI') {
 
-        environment {
-            AWS_DEFAULT_REGION = "ap-south-1"
-        }
-
         steps {
             withCredentials([[
                 $class: 'AmazonWebServicesCredentialsBinding',
