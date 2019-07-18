@@ -49,29 +49,7 @@ pipeline {
 			}
 
 		}
-		stage('approval') {
-			options {
-				timeout(time: 1, unit: 'HOURS')
-			}
-			steps {
-				input 'approve the plan to proceed and apply'
-			}
-		}
-		stage('Destroy') {
-			steps {
-				withCredentials([
-					[
-						$class: 'AmazonWebServicesCredentialsBinding',
-						credentialsId: 'aws_prod',
-						accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-						secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-					]
-				]) {
-					sh 'terraform destroy'
-				}
 
-			}
 
-		}
 	}
 }
