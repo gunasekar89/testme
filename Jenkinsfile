@@ -4,11 +4,6 @@ pipeline {
     }
 
 stages {
-        stage ('Clone') {
-            steps {
-                git branch: 'master', url: "https://github.com/gunasekar89/testme.git"
-            }
-        }
     	stage('Run AWS CLI') {
 
         steps {
