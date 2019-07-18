@@ -6,7 +6,7 @@ pipeline {
 stages {
         stage ('Clone') {
             steps {
-                git branch: 'tomcat', url: "https://github.com/gunasekar89/terra.git"
+                git branch: 'master', url: "https://github.com/gunasekar89/testme.git"
             }
         }
     	stage('Run AWS CLI') {
